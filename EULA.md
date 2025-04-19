@@ -1,6 +1,6 @@
 OpenAPI GUI Editor EULA
 ----
-1. Definitions
+## 1. Definitions
 
 “Confirmation” means an email from JetBrains confirming Your rights to use a Paid Plugin and containing important information about Your license or Subscription.
 
@@ -24,7 +24,7 @@ OpenAPI GUI Editor EULA
 
 “Paid Plugin” means a Plugin that is offered for a fee (can be either a one-time license fee or a recurring subscription fee).
 
-"Plugin" means any plugin, extension, application, widget, or other software program designed to work with JetBrains Products that the Developer makes available under this Standard EULA.
+"Plugin" means any plugin, extension, application, widget, or other software program designed to work with JetBrains Products that the Developer makes available under this EULA.
 
 "Plugin Users" means users that are able to access and use the Plugin concurrently.
 
@@ -34,11 +34,11 @@ OpenAPI GUI Editor EULA
 
 “Subscription Period” means the Subscription period described in Your Confirmation.
 
-"You" means an individual or an entity concluding this Standard EULA.
+"You" means an individual or an entity concluding this EULA.
 
-2. Grant of License
+## 2. Grant of License
 
-2.1. License. The Developer hereby grants You a limited, worldwide, non-exclusive, non-transferable license to use the Plugin (including any generally available updates and upgrades released during your rightful use of the Plugin) as long as the use is in line with Your Confirmation, the Documentation, and the limits set out in this Standard EULA. You may:
+2.1. License. The Developer hereby grants You a limited, worldwide, non-exclusive, non-transferable license to use the Plugin (including any generally available updates and upgrades released during your rightful use of the Plugin) as long as the use is in line with Your Confirmation, the Documentation, and the limits set out in this EULA. You may:
 
 install the Plugin;
 
@@ -48,7 +48,7 @@ make backup copies of the Plugin for archival purposes.
 
 2.2. Restrictions. You may not modify, reverse-engineer, decompile, or disassemble the Plugin in whole or in part, or create any derivative works from the Plugin, or sublicense any rights to the Plugin, unless otherwise expressly authorized in writing by the Developer.
 
-2.3. Duration of License. The license granted under this Standard EULA can be provided as:
+2.3. Duration of License. The license granted under this EULA can be provided as:
 
 perpetual in case of Free Plugins or Paid Plugins for which You are charged a one-time license fee, and
 
@@ -56,7 +56,7 @@ time-limited for the duration of your Subscription Period, in case of Paid Plugi
 
 For more details about the type of Paid Plugin, see the information in Your Confirmation.
 
-3. Subscription
+## 3. Subscription
 
 3.1. Subscription Limits. If You purchased a Plugin Subscription, You must use the Paid Plugin in accordance with the limits described in Your subscription plan (e.g., You must ensure that the maximum number of Plugin Users does not exceed the number of Plugin Users for which You have purchased the Subscription).
 
@@ -64,15 +64,15 @@ For more details about the type of Paid Plugin, see the information in Your Conf
 
 3.3. Fallback License. If the Plugin is provided with a Fallback license according to the Confirmation, following the expiration of the Subscription Period without a renewal, Your license to use the Plugin as stipulated in Section 2 shall continue on a perpetual, royalty-free, non-exclusive, and non-transferable basis with respect to the Fallback Version of the Plugin (including all limitations). The granting of the Fallback license is expressly contingent upon Your compliance with this EULA, including Your payment of the applicable Subscription fees for at least the preceding 12 months in full and without interruptions.
 
-4. Intellectual Property
+## 4. Intellectual Property
 
 The Plugin is protected by copyright and other intellectual property laws and treaties. The Developer or its licensors own all title, copyright, and other intellectual property rights to the Plugin.
 
-5. Disclaimer of Warranty
+## 5. Disclaimer of Warranty
 
 ALL PLUGINS ARE PROVIDED TO YOU ON AN "AS-IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES. YOUR USE OF PLUGINS IS AT YOUR OWN RISK. THE DEVELOPER PROVIDES NO WARRANTY AS TO THE PLUGIN'S USE OR PERFORMANCE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER DISCLAIMS ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH REGARD TO THE PLUGIN, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES. THE DEVELOPER DOES NOT WARRANT THAT THE PLUGIN IS ACCURATE, RELIABLE, OR CORRECT; THAT THE PLUGIN MEETS YOUR REQUIREMENTS; THAT THE PLUGIN WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION, UNINTERRUPTED, OR SECURE; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE PLUGIN IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. EXCEPT AS REQUIRED BY APPLICABLE LAWS, ANY UPDATES AND UPGRADES TO THE PLUGIN WILL ONLY BE PROVIDED ON AN “AS AVAILABLE” BASIS, I.E., AT THE DEVELOPER’S SOLE DISCRETION.
 
-6. Limitation of Liability
+## 6. Limitation of Liability
 
 IN NO EVENT WILL THE DEVELOPER BE LIABLE FOR ANY DIRECT OR INDIRECT COSTS, LOSSES, OR DAMAGES ASSOCIATED WITH THE USE OF THE DEVELOPER'S PLUGIN.
 
