@@ -29,3 +29,12 @@
 ## [1.0.5] - 2025-05-22
 ### Added
 - Preserve order of paths/operations in the UI
+
+## [1.0.6] - 2025-05-23
+### Added
+- Fixed bugs with adding/deleting methods
+
+## [1.0.7] - 2025-05-28
+### Added
+- Fixed icon first load issue
+- Added extensions support in the info section
