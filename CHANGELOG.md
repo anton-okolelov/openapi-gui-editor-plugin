@@ -38,3 +38,24 @@
 ### Added
 - Fixed icon first load issue
 - Added extensions support in the info section
+
+## [1.0.8] - 2025-05-31
+### Added
+- Added quick suggestions for schema rules
+- Fixed bugs with a document version type
+
+## [1.0.9] - 2025-06-02
+### Added
+- Autofix some minor issues with the document
+- Reordered some objects in yaml
+- Fixed tags description serialization
+
+## [1.0.10] - 2025-06-05
+### Added
+- Long names (like paths, schema names, etc.) are now shortened by replacing the middle part with an ellipsis for better readability.
+- Fixed display issues with OpenAPI extensions (x-...).
+- Fixed bugs related to editing the description field in schema definitions.
+
+## [1.0.11] - 2025-06-08
+### Added
+- Fixed bug with "authorizationCode" field in the security scheme.
