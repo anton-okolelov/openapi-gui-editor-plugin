@@ -59,3 +59,21 @@
 ## [1.0.11] - 2025-06-08
 ### Added
 - Fixed bug with "authorizationCode" field in the security scheme.
+
+## [1.0.12] - 2025-06-09
+### Added
+- Bugfix for WebHooks serialization.
+- Added "Callback references" support.
+
+## [1.0.13] - 2025-06-11
+### Added
+- Fixed MediaType schema serialization bug
+- Fixed form validation issues in Parameters and Links sections
+
+## [1.0.14] - 2025-06-17
+### Added
+- OpenAPI 3.0 Support
+
+## [1.0.15] - 2025-06-20
+### Added
+- Fixed some Windows-specific issues with the serialization of the OpenAPI document.
