@@ -77,3 +77,7 @@
 ## [1.0.15] - 2025-06-20
 ### Added
 - Fixed some Windows-specific issues with the serialization of the OpenAPI document.
+
+## [1.0.16] - 2025-07-05
+### Added
+- Changed some UI elements (components, paths) for better usability.
