@@ -2,7 +2,7 @@ OpenAPI GUI Editor (JetBrains Plugin)
 ========================
 
 <!-- Plugin description -->
-GUI Editor for OpenAPI specification (OAS) 3.0 and 3.1.
+[GUI Editor](https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor) for OpenAPI specification (OAS) 3.0 and 3.1.
 
 ## Why does the plugin exist?
 
