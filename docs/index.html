@@ -992,7 +992,9 @@
                     </div>
                     <h1>OpenAPI GUI Editor</h1>
                     <p class="subtitle">Visual OpenAPI specification editor for IntelliJ IDEA, PyCharm, WebStorm and all JetBrains IDEs. No YAML syntax required.</p>
-                    <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag('event', 'purchase', {'event_category': 'Conversion', 'event_label': 'Hero Start Free Trial', 'value': 1}); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Start Free Trial'})">
+                    <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary"
+                     onclick="gtag_report_conversion('https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing')"
+                     >
                         <span>Start Free Trial</span>
                         <span>→</span>
                     </a>
@@ -1120,7 +1122,7 @@
         <div class="container">
             <h2>Ready to Design APIs Visually?</h2>
             <p>Transform your API workflow with visual OpenAPI editing</p>
-            <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag('event', 'purchase', {'event_category': 'Conversion', 'event_label': 'Final Start Free Trial', 'value': 1}); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Final Start Free Trial'})">
+            <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag_report_conversion('https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing')">
                 <span>Start Free Trial</span>
                 <span>→</span>
             </a>
@@ -1267,5 +1269,25 @@
             console.log('Consent Mode initialized. Use resetConsent() to reset settings.');
         });
     </script>
+
+    <!-- Event snippet for Outbound click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17380820062/K3kXCMrE7PwaEN6I6d9A',
+          'value': 1.0,
+          'currency': 'CZK',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
 </body>
 </html>
