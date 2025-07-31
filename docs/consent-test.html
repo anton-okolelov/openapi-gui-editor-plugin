@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Mode Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consent Mode System Test</h1>
+    
+    <div class="test-section">
+        <h2>Current Consent Status</h2>
+        <div id="consent-status" class="status info">
+            Loading...
+        </div>
+        <button class="button" onclick="showConsentStatus()">Refresh Status</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Consent Management</h2>
+        <button class="button" onclick="showConsentBanner()">Show Consent Banner</button>
+        <button class="button" onclick="clearConsent()">Clear Consent</button>
+        <button class="button" onclick="setTestConsent()">Set Test Consent</button>
+        <button class="button" onclick="resetAndShowBanner()">Reset & Show Banner</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Google Analytics Test</h2>
+        <button class="button" onclick="testAnalytics()">Send Test Event</button>
+        <div id="analytics-status" class="status info">
+            Google Analytics status will be shown here
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Debug Information</h2>
+        <button class="button" onclick="showDebugInfo()">Show Debug Info</button>
+        <pre id="debug-info"></pre>
+    </div>
+
+    <script>
+        // Consent Management System (упрощенная версия для тестирования)
+        class ConsentManager {
+            constructor() {
+                this.consent = {
+                    analytics: false,
+                    marketing: false,
+                    necessary: true
+                };
+                this.init();
+            }
+
+            init() {
+                const savedConsent = localStorage.getItem('userConsent');
+                if (savedConsent) {
+                    this.consent = JSON.parse(savedConsent);
+                }
+                this.updateStatus();
+            }
+
+            showConsentBanner() {
+                const banner = document.createElement('div');
+                banner.id = 'consent-banner';
+                banner.style.cssText = `
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.95);
+                    color: white;
+                    padding: 20px;
+                    z-index: 10000;
+                `;
+                banner.innerHTML = `
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <h3>🍪 Test Consent Banner</h3>
+                        <p>This is a test banner for checking Consent Mode functionality.</p>
+                        <div style="margin: 15px 0;">
+                            <label style="display: block; margin: 10px 0;">
+                                <input type="checkbox" id="consent-analytics" checked>
+                                Analytics (Google Analytics)
+                            </label>
+                            <label style="display: block; margin: 10px 0;">
+                                <input type="checkbox" id="consent-marketing" checked>
+                                Marketing and Advertising
+                            </label>
+                        </div>
+                        <div>
+                            <button onclick="consentManager.acceptAll()" style="background: #007bff; color: white; border: none; padding: 10px 20px; margin: 5px; border-radius: 4px; cursor: pointer;">Accept All</button>
+                            <button onclick="consentManager.acceptSelected()" style="background: #6c757d; color: white; border: none; padding: 10px 20px; margin: 5px; border-radius: 4px; cursor: pointer;">Accept Selected</button>
+                            <button onclick="consentManager.rejectAll()" style="background: #dc3545; color: white; border: none; padding: 10px 20px; margin: 5px; border-radius: 4px; cursor: pointer;">Reject All</button>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(banner);
+            }
+
+            acceptAll() {
+                this.consent.analytics = true;
+                this.consent.marketing = true;
+                this.saveAndApply();
+            }
+
+            acceptSelected() {
+                this.consent.analytics = document.getElementById('consent-analytics').checked;
+                this.consent.marketing = document.getElementById('consent-marketing').checked;
+                this.saveAndApply();
+            }
+
+            rejectAll() {
+                this.consent.analytics = false;
+                this.consent.marketing = false;
+                this.saveAndApply();
+            }
+
+            saveAndApply() {
+                localStorage.setItem('userConsent', JSON.stringify(this.consent));
+                this.hideConsentBanner();
+                this.updateStatus();
+                
+                // Simulate Google Analytics consent update
+                if (window.gtag) {
+                    gtag('consent', 'update', {
+                        'analytics_storage': this.consent.analytics ? 'granted' : 'denied',
+                        'ad_storage': this.consent.marketing ? 'granted' : 'denied'
+                    });
+                    
+                    gtag('event', 'consent_update', {
+                        'event_category': 'Consent',
+                        'event_label': 'User updated consent settings',
+                        'analytics_consent': this.consent.analytics,
+                        'marketing_consent': this.consent.marketing
+                    });
+                }
+            }
+
+            hideConsentBanner() {
+                const banner = document.getElementById('consent-banner');
+                if (banner) {
+                    banner.remove();
+                }
+            }
+
+            updateStatus() {
+                const statusDiv = document.getElementById('consent-status');
+                if (statusDiv) {
+                    statusDiv.innerHTML = `
+                        <strong>Current consent settings:</strong><br>
+                        Analytics: ${this.consent.analytics ? '✅ Allowed' : '❌ Denied'}<br>
+                        Marketing: ${this.consent.marketing ? '✅ Allowed' : '❌ Denied'}<br>
+                        Necessary: ✅ Always allowed
+                    `;
+                    statusDiv.className = 'status success';
+                }
+            }
+
+            getConsent() {
+                return this.consent;
+            }
+        }
+
+        // Initialize consent manager
+        const consentManager = new ConsentManager();
+
+        // Test functions
+        function showConsentStatus() {
+            consentManager.updateStatus();
+        }
+
+        function showConsentBanner() {
+            consentManager.showConsentBanner();
+        }
+
+        function clearConsent() {
+            localStorage.removeItem('userConsent');
+            consentManager.init();
+            document.getElementById('consent-status').innerHTML = 'Consent cleared. Reload the page to show the banner.';
+            document.getElementById('consent-status').className = 'status info';
+        }
+
+        function setTestConsent() {
+            consentManager.consent = {
+                analytics: true,
+                marketing: false,
+                necessary: true
+            };
+            localStorage.setItem('userConsent', JSON.stringify(consentManager.consent));
+            consentManager.updateStatus();
+        }
+
+        function resetAndShowBanner() {
+            localStorage.removeItem('userConsent');
+            consentManager.consent = {
+                analytics: false,
+                marketing: false,
+                necessary: true
+            };
+            consentManager.showConsentBanner();
+            consentManager.updateStatus();
+        }
+
+        function testAnalytics() {
+            const statusDiv = document.getElementById('analytics-status');
+            if (window.gtag) {
+                gtag('event', 'test_event', {
+                    'event_category': 'Test',
+                    'event_label': 'Consent Mode Test',
+                    'value': 1
+                });
+                statusDiv.innerHTML = '✅ Test event sent to Google Analytics';
+                statusDiv.className = 'status success';
+            } else {
+                statusDiv.innerHTML = '❌ Google Analytics not loaded';
+                statusDiv.className = 'status error';
+            }
+        }
+
+        function showDebugInfo() {
+            const debugDiv = document.getElementById('debug-info');
+            const debugInfo = {
+                consent: consentManager.getConsent(),
+                localStorage: localStorage.getItem('userConsent'),
+                gtag: typeof window.gtag !== 'undefined',
+                userAgent: navigator.userAgent,
+                timestamp: new Date().toISOString()
+            };
+            debugDiv.textContent = JSON.stringify(debugInfo, null, 2);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            consentManager.updateStatus();
+        });
+    </script>
+</body>
+</html> 
