@@ -577,40 +577,6 @@
             line-height: 1.6;
         }
 
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 60px;
-            text-align: center;
-        }
-
-        .stat-item {
-            position: relative;
-        }
-
-        .stat-item h3 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-
-        .stat-item p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         /* Testimonials */
         .testimonials {
             padding: 120px 0;
@@ -742,14 +708,14 @@
                     </div>
                     <h1>OpenAPI GUI Editor</h1>
                     <p class="subtitle">Visual OpenAPI specification editor for IntelliJ IDEA, PyCharm, WebStorm and all JetBrains IDEs. No YAML syntax required.</p>
-                    <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Start Free'})">
-                        <span>Start Free</span>
+                    <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Start Free Trial'})">
+                        <span>Start Free Trial</span>
                         <span>→</span>
                     </a>
                 </div>
                 <div class="hero-visual">
                     <div class="screenshot-container" data-big-image="screen_big.png">
-                        <img src="screen_small.png" 
+                        <img src="screen_big.png" 
                              alt="OpenAPI GUI Editor Screenshot" 
                              class="plugin-screenshot"
                              loading="lazy" />
@@ -849,30 +815,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>15,000+</h3>
-                    <p>Active Users</p>
-                </div>
-                <div class="stat-item">
-                    <h3>90%</h3>
-                    <p>Time Saved</p>
-                </div>
-                <div class="stat-item">
-                    <h3>99.8%</h3>
-                    <p>Uptime</p>
-                </div>
-                <div class="stat-item">
-                    <h3>4.9/5</h3>
-                    <p>User Rating</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
@@ -893,9 +835,9 @@
     <section class="final-cta">
         <div class="container">
             <h2>Ready to Design APIs Visually?</h2>
-            <p>Join 15,000+ developers who've already transformed their API workflow</p>
-            <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Final Get Started'})">
-                <span>Get Started Now</span>
+            <p>Transform your API workflow with visual OpenAPI editing</p>
+            <a href="https://plugins.jetbrains.com/plugin/27118-openapi-gui-editor/pricing" class="cta-primary" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Final Start Free Trial'})">
+                <span>Start Free Trial</span>
                 <span>→</span>
             </a>
         </div>
@@ -943,25 +885,7 @@
             }
         }
 
-        // Counter animation
-        const counters = document.querySelectorAll('.stat-item h3');
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = counter.innerText.replace(/[^\d.]/g, '');
-                const increment = target / 200;
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        counter.innerText = counter.innerText.replace(/[\d.]+/, target);
-                        clearInterval(timer);
-                    } else {
-                        counter.innerText = counter.innerText.replace(/[\d.]+/, Math.floor(current));
-                    }
-                }, 10);
-            });
-        };
+
 
         // Intersection Observer for animations
         const observerOptions = {
@@ -975,16 +899,13 @@
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                     
-                    // Animate counters when stats section is visible
-                    if (entry.target.classList.contains('stats')) {
-                        animateCounters();
-                    }
+
                 }
             });
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.problem-card, .benefit-card, .testimonial-card, .stats').forEach(el => {
+        document.querySelectorAll('.problem-card, .benefit-card, .testimonial-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.8s ease-out';
