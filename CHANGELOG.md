@@ -48,7 +48,7 @@
 ### Added
 - Autofix some minor issues with the document
 - Reordered some objects in yaml
-- Fixed tags description serialization
+- Fixed tags description serialization 
 
 ## [1.0.10] - 2025-06-05
 ### Added
@@ -81,3 +81,16 @@
 ## [1.0.16] - 2025-07-05
 ### Added
 - Changed some UI elements (components, paths) for better usability.
+
+## [1.0.17] - 2025-07-18
+### Added
+- Fixed creating JSON openapi documents
+
+## [1.0.18] - 2025-08-04
+### Added
+- Added welcome screen
+- Fixed some minor issues with the UI
+
+## [1.0.19] - 2025-08-12
+### Added
+- Added notification for possible openapi documents
