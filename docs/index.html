@@ -198,6 +198,15 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           window.location = url;
         }
       };
+      
+      // Проверяем, загружен ли gtag
+      if (typeof gtag === 'undefined') {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+        return false;
+      }
+      
       gtag('event', 'conversion', {
           'send_to': 'AW-17380820062/K3kXCMrE7PwaEN6I6d9A',
           'value': 1.0,
