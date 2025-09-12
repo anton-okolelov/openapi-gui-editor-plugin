@@ -48,7 +48,7 @@
 ### Added
 - Autofix some minor issues with the document
 - Reordered some objects in yaml
-- Fixed tags description serialization 
+- Fixed tags description serialization
 
 ## [1.0.10] - 2025-06-05
 ### Added
@@ -94,3 +94,8 @@
 ## [1.0.19] - 2025-08-12
 ### Added
 - Added notification for possible openapi documents
+
+## [1.0.20] - 2025-09-12
+### Added
+- Parse errors don't prevent loading the document anymore
+- Fixed some minor UI bugs
