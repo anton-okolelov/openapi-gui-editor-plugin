@@ -99,3 +99,8 @@
 ### Added
 - Parse errors don't prevent loading the document anymore
 - Fixed some minor UI bugs
+
+## [1.0.21] - 2025-09-15
+### Added
+- Changed yaml serialization for better redability
+- Preserve order in schema section
