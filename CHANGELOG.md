@@ -104,3 +104,24 @@
 ### Added
 - Changed yaml serialization for better redability
 - Preserve order in schema section
+
+
+## [1.0.22] - 2025-09-22
+### Added
+- Fixed some minor UI bugs
+- Preserve order of elements in info and params
+
+## [1.0.23] - 2025-09-26
+### Added
+- Fixed minor UI bugs
+- Preserve order of schema elements
+
+## [1.0.24] - 2025-10-05
+### Added
+- Simplified the UI for adding new elements (like paths, schemas, etc.)
+- Fixed some minor UI bugs
+
+## [1.0.25] - 2025-10-12
+### Added
+- Clickable links in item lists (like paths, schemas, etc.)
+- Simplified UI for parameters
