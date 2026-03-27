@@ -48,7 +48,7 @@
 ### Added
 - Autofix some minor issues with the document
 - Reordered some objects in yaml
-- Fixed tags description serialization 
+- Fixed tags description serialization
 
 ## [1.0.10] - 2025-06-05
 ### Added
@@ -94,3 +94,47 @@
 ## [1.0.19] - 2025-08-12
 ### Added
 - Added notification for possible openapi documents
+
+## [1.0.20] - 2025-09-12
+### Added
+- Parse errors don't prevent loading the document anymore
+- Fixed some minor UI bugs
+
+## [1.0.21] - 2025-09-15
+### Added
+- Changed yaml serialization for better redability
+- Preserve order in schema section
+
+
+## [1.0.22] - 2025-09-22
+### Added
+- Fixed some minor UI bugs
+- Preserve order of elements in info and params
+
+## [1.0.23] - 2025-09-26
+### Added
+- Fixed minor UI bugs
+- Preserve order of schema elements
+
+## [1.0.24] - 2025-10-05
+### Added
+- Simplified the UI for adding new elements (like paths, schemas, etc.)
+- Fixed some minor UI bugs
+
+## [1.0.25] - 2025-10-12
+### Added
+- Clickable links in item lists (like paths, schemas, etc.)
+- Simplified UI for parameters
+
+## [1.0.26] - 2025-11-27
+### Added
+- Improved schema refs
+- Fixed parameter serialization issues
+
+## [1.0.27] - 2026-01-31
+### Added
+- Fixed some UX issues
+
+## [1.0.28] - 2026-03-27
+### Added
+- Support for 2026.1
