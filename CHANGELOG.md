@@ -138,3 +138,18 @@
 ## [1.0.28] - 2026-03-27
 ### Added
 - Support for 2026.1
+
+## [1.0.29] - 2026-03-31
+### Added
+- Improved parse error handling and notifications
+- Example generation
+- Fixed some minor UI bugs
+
+## [1.0.30] - 2026-04-24
+- Preserve field order when re-saving operations, components, security schemes, and headers
+- Fixed cases where tags, responses, `in`/`name`, and header fields could move after save
+
+## [1.1.2] - 2026-05-10
+- Added OpenAPI 3.2 support and compatibility fixes for older OpenAPI versions
+- Improved editors for media types, headers, tags, links, examples, security schemes, and serialization fields
+- Fixed data preservation issues when re-saving descriptions, boolean values, and version-specific fields
